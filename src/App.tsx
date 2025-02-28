@@ -8,8 +8,8 @@ function App() {
   return (
     <Router>
       <nav>
-        <Link to="/test-task">Все рецепты</Link>
-        <Link to="/favorites">Избранное</Link>
+        <Link to="/test-task">Всі рецепти</Link>
+        <Link to="/favorites">Вибрані</Link>
       </nav>
       <Routes>
         <Route path="/test-task" element={<RecipeList />} />

@@ -9,10 +9,9 @@ const FavoritesPage: React.FC = () => {
   const dispatch = useDispatch();
   const favorites = useSelector((state: RootState) => state.favorites.favorites);
 
-  // Функция объединения ингредиентов с суммированием количества
   const getCombinedIngredients = () => {
     const ingredientMap: { [key: string]: number } = {};
-    const unitMap: { [key: string]: string } = {}; // Храним единицы измерения отдельно
+    const unitMap: { [key: string]: string } = {}; 
 
     favorites.forEach((recipe) => {
       for (let i = 1; i <= 20; i++) {
@@ -20,26 +19,26 @@ const FavoritesPage: React.FC = () => {
         let measure = recipe[`strMeasure${i}` as keyof Recipe] as string;
 
         if (ingredient && ingredient.trim() !== "") {
-          const ingredientKey = ingredient.toLowerCase().trim(); // Нормализуем название ингредиента
+          const ingredientKey = ingredient.toLowerCase().trim(); 
 
-          // Парсим числовую часть измерения, если возможно
+       
           const match = measure.match(/^(\d*\.?\d+)\s*(.*)$/);
-          let quantity = match ? parseFloat(match[1]) : 1; // Если не число, берем 1
-          let unit = match ? match[2].trim() : measure.trim(); // Остальное - единицы измерения
+          let quantity = match ? parseFloat(match[1]) : 1; 
+          let unit = match ? match[2].trim() : measure.trim(); 
 
-          // Если ингредиент уже есть в списке, суммируем количество
+         
           if (ingredientMap[ingredientKey]) {
             ingredientMap[ingredientKey] += quantity;
           } else {
             ingredientMap[ingredientKey] = quantity;
-            unitMap[ingredientKey] = unit; // Запоминаем единицу измерения
+            unitMap[ingredientKey] = unit;
           }
         }
       }
     });
 
     return Object.entries(ingredientMap).map(([ingredient, count]) => {
-      const unit = unitMap[ingredient] || ""; // Достаем единицу измерения
+      const unit = unitMap[ingredient] || "";
       return `${ingredient}: ${count} ${unit}`.trim();
     });
   };

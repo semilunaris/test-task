@@ -12,7 +12,7 @@
     margin-bottom: 20px;
   }
   
-  /* 🔍 Поисковая строка */
+
   .search-bar {
     margin-bottom: 20px;
   }
@@ -32,7 +32,7 @@
     outline: none;
   }
   
-  /* 📂 Фильтр категорий */
+
   .category-filter {
     margin-bottom: 20px;
   }
@@ -50,7 +50,7 @@
     border-color: #ff6b6b;
   }
   
-  /* 🍽️ Сетка рецептов */
+
   .recipes-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -58,7 +58,7 @@
     margin-top: 20px;
   }
   
-  /* 🏷️ Карточка рецепта */
+
   .recipe-card {
     background: #fff;
     border-radius: 12px;
@@ -105,7 +105,7 @@
     color: #e55a5a;
   }
   
-  /* ⭐ Кнопка избранного */
+
   .recipe-card button {
     background: #ff6b6b;
     color: white;

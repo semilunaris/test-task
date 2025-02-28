@@ -29,17 +29,17 @@ const RecipeDetails: React.FC = () => {
 
   if (loading) return <p>Загрузка...</p>;
   if (error) return <p>{error}</p>;
-  if (!recipe) return <p>Рецепт не найден</p>;
+  if (!recipe) return <p>Рецепт не знайдено</p>;
 
   return (
     <div className="recipe-details">
       <h1>{recipe.strMeal}</h1>
       <img src={recipe.strMealThumb} alt={recipe.strMeal} />
-      <p><strong>Категория:</strong> {recipe.strCategory}</p>
+      <p><strong>Категорія:</strong> {recipe.strCategory}</p>
       <p><strong>Кухня:</strong> {recipe.strArea}</p>
-      <p><strong>Инструкции:</strong> {recipe.strInstructions}</p>
+      <p><strong>Інструкції:</strong> {recipe.strInstructions}</p>
 
-      <h2>Ингредиенты:</h2>
+      <h2>Інгредиенти:</h2>
       <ul>
         {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => {
           const ingredient = recipe[`strIngredient${num}` as keyof Recipe];
