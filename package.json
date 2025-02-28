@@ -2,7 +2,7 @@
   "name": "test-task",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://Liza0806.github.io/test-task",
+  "homepage": "http://semilunaris.github.io/test-task",
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.0",
     "@testing-library/dom": "^10.4.0",
@@ -31,7 +31,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server --watch db.json --port 5000"
+    "server": "json-server --watch db.json --port 5001"
   },
   "eslintConfig": {
     "extends": [
