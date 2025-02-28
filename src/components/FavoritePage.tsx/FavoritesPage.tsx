@@ -45,10 +45,10 @@ const FavoritesPage: React.FC = () => {
 
   return (
     <div className="container">
-      <h1>Избранные рецепты</h1>
+      <h1>Вибрані рецепти</h1>
 
       {favorites.length === 0 ? (
-        <p>Вы еще не добавили рецептов в избранное.</p>
+        <p>Ви ще не додали рецепти в вибране</p>
       ) : (
         <>
           <div className="recipes-grid">
@@ -57,13 +57,13 @@ const FavoritesPage: React.FC = () => {
                 <img src={recipe.strMealThumb} alt={recipe.strMeal} />
                 <h2>{recipe.strMeal}</h2>
                 <button onClick={() => dispatch(removeFromFavorites(recipe.idMeal))}>
-                  Удалить
+                  Видалити
                 </button>
               </div>
             ))}
           </div>
 
-          <h2>Список ингредиентов</h2>
+          <h2>Список інгредієнтів</h2>
           <ul>
             {getCombinedIngredients().map((ingredient, index) => (
               <li key={index}>{ingredient}</li>

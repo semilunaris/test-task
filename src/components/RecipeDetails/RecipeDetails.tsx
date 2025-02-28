@@ -18,7 +18,7 @@ const RecipeDetails: React.FC = () => {
         );
         setRecipe(response.data.meals ? response.data.meals[0] : null);
       } catch (err) {
-        setError("Ошибка загрузки рецепта");
+        setError("Помилка загрузки");
       } finally {
         setLoading(false);
       }
@@ -39,7 +39,7 @@ const RecipeDetails: React.FC = () => {
       <p><strong>Кухня:</strong> {recipe.strArea}</p>
       <p><strong>Інструкції:</strong> {recipe.strInstructions}</p>
 
-      <h2>Інгредиенти:</h2>
+      <h2>Інгредієнти:</h2>
       <ul>
         {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => {
           const ingredient = recipe[`strIngredient${num}` as keyof Recipe];

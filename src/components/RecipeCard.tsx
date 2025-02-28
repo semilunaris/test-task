@@ -5,7 +5,7 @@ const RecipeCard: React.FC<{ recipe: any }> = ({ recipe }) => {
     <div className="recipe-card">
       <img src={recipe.strMealThumb} alt={recipe.strMeal} />
       <h3>{recipe.strMeal}</h3>
-      <a href={`/recipe/${recipe.idMeal}`}>Подробнее</a>
+      <a href={`/recipe/${recipe.idMeal}`}>Детальніше</a>
     </div>
   );
 };
