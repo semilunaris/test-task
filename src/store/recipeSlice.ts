@@ -35,7 +35,7 @@ export const fetchRecipes = createAsyncThunk<Recipe[], void, { rejectValue: stri
   "recipes/fetchRecipes",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get("https://www.themealdb.com/api/json/v1/1/search.php?f=a");
+      const response = await axios.get("https://www.themealdb.com/api/json/v1/1/search.php?f=b");
       return response.data.meals || [];
     } catch (error) {
       return rejectWithValue("Ошибка загрузки рецептов");

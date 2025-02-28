@@ -1,16 +1,23 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import RecipeList from "./components/RecipeList";
-import RecipeDetails from "./components/RecipeDetails";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import RecipeList from "./components/RecipeList/RecipeList";
+import FavoritesPage from "./components/FavoritePage.tsx/FavoritesPage";
+import RecipeDetails from "./components/RecipeDetails/RecipeDetails";
+import "./App.css"
 
-const App: React.FC = () => {
+function App() {
   return (
-    <Router > {/* Указали basename */}
+    <Router>
+      <nav>
+        <Link to="/test-task">Все рецепты</Link>
+        <Link to="/favorites">Избранное</Link>
+      </nav>
       <Routes>
         <Route path="/test-task" element={<RecipeList />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/recipe/:id" element={<RecipeDetails />} />
       </Routes>
     </Router>
   );
-};
+}
 
-export default App;
+export default App
